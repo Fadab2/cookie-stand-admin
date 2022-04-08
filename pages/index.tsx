@@ -16,13 +16,13 @@ const Home: NextPage = () => {
       </header>
       <main className="">
         <div className='justify-center bg-emerald-200'>
-        <legend className='flex items-center text-xl'>Create Cookie Stand</legend>
+        <h2 className='text-xl text-center '>Create Cookie Stand</h2>
         <form className='flex my-4 bg-emerald-200'>
           
-            <label> <div className="mt-1.5">Location</div> 
-              <input type="text"/>
+            <label> <span className="mt-1.5">Location</span> 
+              <input className='w-full' type="text"/>
             </label>
-         
+            <div className='flex'>
              <label><span className="text-sl">Minimum Customers per Hour</span>
               <input type="number"
                />
@@ -35,7 +35,8 @@ const Home: NextPage = () => {
               <input type="number"
                />
             </label>
-          <button className="flex items-center justify-between p-4 bg-emerald-500">Create</button>
+          <button className="w-40 p-4 bg-emerald-500">Create</button>
+          </div>
           </form>
         </div>
         <table className='w-1/2 mx-auto my-4'>
