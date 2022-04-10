@@ -2,6 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Header from '../components/Header'
+import Forms from '../components/Forms'
+import Table from '../components/Table'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -10,54 +14,15 @@ const Home: NextPage = () => {
         <title>cookie stand admin</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className='flex items-center justify-between p-4 bg-emerald-500'>
-        <h1 className='text-4xl'>Cookie Stand Admin</h1>
-      
-      </header>
+        < Header />
       <main className="">
-        <div className='justify-center bg-emerald-200'>
-        <h2 className='text-xl text-center '>Create Cookie Stand</h2>
-        <form className='flex my-4 bg-emerald-200'>
-          
-            <label> <span className="mt-1.5">Location</span> 
-              <input className='w-full' type="text"/>
-            </label>
-            <div className='flex'>
-             <label><span className="text-sl">Minimum Customers per Hour</span>
-              <input type="number"
-               />
-            </label>
-            <label><span className="text-sl">Maximum Customers per Hour</span>
-              <input type="number"
-               />
-            </label>
-              <label><span className="text-sl">Average Cookies per Sale</span>
-              <input type="number"
-               />
-            </label>
-          <button className="w-40 p-4 bg-emerald-500">Create</button>
-          </div>
-          </form>
-        </div>
-        <table className='w-1/2 mx-auto my-4'>
-          <thead>
-            <tr>
-              <th className='border-gray-700'>Minimum Customers per Hour</th>
-              <th className='border-gray-700'>Maximum Customers per Hour</th>
-              <th className='border-gray-700'>Average Cookies per Sale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <td className='pl-2 border border-gray-700'>2</td>
-            <td className='pl-2 border border-gray-700'>4</td>
-            <td className='pl-2 border border-gray-700'>2.5</td>
-          </tbody>
-        </table>
+        < Forms />
+       
+      
+        < Table />
       </main>
-
-      <footer className="flex items-center justify-between p-4 bg-emerald-500">
-       <p> &copy;2022</p>
-      </footer>
+      < Footer />
+        
     </div>
   )
 }
