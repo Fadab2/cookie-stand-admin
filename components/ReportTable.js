@@ -1,7 +1,7 @@
  export default function Table({ hours, reports }) {
   if (reports.length) {
     return (
-      <table className="w-11/12 p-5 mt-8 ml-40 mr-40 bg-emerald-500">
+      <table className="text-center border-[1px] border-black w-8/12 p-5 mt-8 mr-40 ml-60 bg-emerald-400">
         <thead>
           <tr>
             <th>Location</th>
@@ -16,7 +16,7 @@
             <Rows key={report.name} report={report} />
           ))}
           <tr className="border-[1px] border-black">
-            <td className="px-4 font-bold">
+            <td className="px-4">
               Totals
             </td>
             {hours.map((hour, idx) => (
@@ -54,7 +54,7 @@
 
 function Rows({ report }) {
   return (
-    <tr className="odd:bg-emerald-400 even:bg-emerald-300">
+    <tr className="odd:bg-emerald-200 even:bg-emerald-300">
       <td className="pl-4 border border-black">{report.name}</td>
       {report.sales_per_hr.map((hourData, idx) => (
         <td className="text-center border border-black" key={idx}>

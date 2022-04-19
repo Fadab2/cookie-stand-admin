@@ -6,7 +6,7 @@ import Table from '../components/ReportTable'
 import { hours } from "../data/fakeData"
 import { useState } from 'react'
 
-export default function CookieStandAdmin() {
+export default function Home() {
 
   const [reports, setStoreReports] = useState([]);
 
