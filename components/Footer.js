@@ -1,7 +1,7 @@
-export default function Footer() {
+export default function Footer({ reports }) {
     return (
-        <footer className="flex items-center justify-between p-4 bg-emerald-500">
-       <p> &copy;2021</p>
+        <footer className="flex p-3 mt-10 text-center place-content-center bg-emerald-400">
+          <p className=''>{reports.length} Locations World Wide</p>
       </footer>
     )
 }
