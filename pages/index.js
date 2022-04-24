@@ -1,32 +1,33 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-import CreateForm from '../components/CreateForm'
-import Footer from '../components/Footer'
-import Table from '../components/ReportTable'
+import axios from 'axios'
+import CookieStandAdmin from '../components/CookieStandAdmin'
 import { hours } from "../data/fakeData"
+import LogingForm from '../components/LoginForm'
 import { useState } from 'react'
+import { useAuth } from '../contexts/auth'
 
 export default function Home() {
 
-  const [reports, setStoreReports] = useState([]);
+  const { user, login, logout } = useAuth();
 
-
-  function handleReport(report) {
-    setStoreReports([...reports, report]);
-
+  const [userName, setUserName] = useState();
+  async function handleLogin(username, password) {
+     
+    setUserName(username)
+    login(username, password)
   }
-
+  
+  function handleLogout() {
+    logout()
+    setUserName(false)
+  }
 
   return (
     <div>
-     
-      <Head />
-      <Header />
+    
       <main>
-        <CreateForm handleReport={handleReport} hours={hours} />
-        <Table hours={hours} reports={reports} />
+        
+        {userName ? < CookieStandAdmin user={userName} logout={handleLogout} />  : <LogingForm onLogin={handleLogin}/>}
       </main>
-      <Footer reports={reports} />
 
     </div>
   )
